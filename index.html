@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neat - Bond Cleaning Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --hero-blue: #3498db;
+        }
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        
+
+        .btn-primary {
+            background-color: #0e8bde;
+            border-color: #f0f3f5;
+            border-radius: 25px;
+            padding: 8px 20px;
+        }
+
+        /* Promo Banner */
+        .promo-banner {
+            background-color: #0074c2;
+            color: white;
+            padding: 7.5px 0;
+            padding-left: 20px;
+            font-size: 12px;
+            text-align: left;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: var(--hero-blue) !important;
+            padding: 15px 0;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+            text-align: left;   
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            background-color: #3498db;
+            color: rgb(231, 232, 234);
+            font-weight: 500;
+            padding-left: 80px;
+            padding-right: 20px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-color: #3498db;
+            color: rgb(255, 255, 255);
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+            min-height: 80vh;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+        }
+
+        .hero-text p {
+            font-size: 1.5rem;
+        }
+        .containergand {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: url('background.jpg') no-repeat center/cover;
+         }
+        .position-absolute {
+        position: absolute;
+        top: 45%; /* Adjust as needed */
+        left: 14%; /* Adjust as needed */
+        width: 300px; /* Adjust image size */
+        transform:scale(2.0);
+        }
+        
+        .wave-bottom {
+            position: absolute;
+            bottom: 0.005%;
+           
+            left: 0%;   
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 C300,90 700,90 1440,0 L1440,100 L0,100 Z" fill="white"/></svg>') no-repeat;
+            background-size: cover;
+        }
+
+        /* Service Section */
+        .services-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .services-header {
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .service-card-body {
+            padding: 25px;
+        }
+
+        .learn-more {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .learn-more:after {
+            content: "→";
+            margin-left: 5px;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            padding: 0 0 100px;
+            background-color: white;
+        }
+
+        .review-card {
+            border: none;
+            margin: 0 25px;
+        }
+
+        .review-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #fff5e6;
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+
+        .review-stars {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            font-style: italic;
+            color: #555;
+        }
+
+        .carousel-control-prev, .carousel-control-next {
+            width: 40px;
+            height: 40px;
+            background-color: rgb(116, 113, 113);
+            border-color: #696969;
+            border-radius: 50%;
+            top: 45%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+            width: 100px;
+        }
+
+        .footer h5 {
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #3498db;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+
+        .guarantee-section {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            border-top: 1px solid #444;
+        }
+    </style>
+</head>
+<body>
+    <!-- Promo Banner -->
+    <div class="promo-banner text-left">
+        Try voucher code LUCKYCHARM10 for 10% OFF 😊. Expires 31/03/2025.
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="https://thisisneat.com.au/">
+                <img src="logo.png.png" alt="Neat Logo" style="max-width: 200px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://thisisneat.com.au/#services" role="button" data-bs-toggle="dropdown">
+                            SERVICES
+                        </a>
+                        <ul class="dropdown-menu"></ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://thisisneat.com.au/#locations" role="button" data-bs-toggle="dropdown">
+                            LOCATIONS
+                        </a>
+                        <ul class="dropdown-menu"></ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://thisisneat.com.au/#resources" role="button" data-bs-toggle="dropdown">
+                            RESOURCES
+                        </a>
+                        <ul class="dropdown-menu"></ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://thisisneat.com.au/blog">BLOG</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://g.page/r/CR-Y0LpuTWpNEBM">REVIEWS</a>
+                    </li>
+                </ul>
+                <a href="https://thisisneat.com.au/end-of-lease-cleaning/sydney#get-a-quote" class="btn btn-primary ms-3">GET A QUOTE</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="containergand">
+            <div class="row align-items-center">
+                <div class="col-12 text-center hero-text mb-5">
+                    <h1 class="mb-4">You move out, we clean up.</h1>
+                    <p>The simplest way to get your bond back. <span class="fst-italic">Guaranteed.*</span></p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="porgi.png" alt="Cleaning person" class="img-fluid">
+                   
+                </div>
+                
+                <div class="col-md-4 text-center">
+                    <img src="img.jpeg people with boxes.svg" alt="People with boxes" class="img-fluid">
+                </div>
+                <div class="position-absolute" style="right: 0; bottom: 50px;">
+                    <img src="porga.png" alt="Cleaning porga" class="d-none d-lg-block">
+                </div>
+            </div>
+        </div>
+        <div class="wave-bottom"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-header text-center">
+                <h2 class="mb-3">Our Services</h2>
+                <p class="text-muted">Dependable, professional, and experienced, we offer a range<br> of bond cleaning services designed to meet your needs</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="service-card">
+                        <img src="end-of-lease-cleaning-service.webp" alt="End of Lease Cleaning" class="service-img">
+                        <div class="service-card-body">
+                            <h4>End of Lease Cleaning</h4>
+                            <p class="text-muted">With our famous 72-hour bond back guarantee*, our cleaners always ensure tenants recover their full rental deposits.</p>
+                            <a href="https://thisisneat.com.au/end-of-lease-cleaning/sydney" class="learn-more">LEARN MORE</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card">
+                        <img src="vacate-cleaning-service.webp" alt="Vacate Cleaning" class="service-img">
+                        <div class="service-card-body">
+                            <h4>Vacate Cleaning</h4>
+                            <p class="text-muted">Our 5-star rated cleaners specialise in helping renters pass their final vacate inspections.</p>
+                            <a href="https://thisisneat.com.au/vacate-cleaning/sydney" class="learn-more">LEARN MORE</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card">
+                        <img src="move-in-move-out-cleaning-service.webp" alt="Moving Cleaning" class="service-img">
+                        <div class="service-card-body">
+                            <h4>Moving Cleaning</h4>
+                            <p class="text-muted">Our cleaning teams will make sure your property is ready for sale, a rental inspection, or for your family to move into.</p>
+                            <a href="https://thisisneat.com.au/move-in-move-out-cleaning/sydney" class="learn-more">LEARN MORE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="reviews-header text-center mb-5">
+                <h2 class="mb-3">Our Reviews</h2>
+                <p class="text-muted">We believe our work speaks for itself, but our customers vouch for us too.</p>
+                <p>Here's just a few of the reviews that make up our <a href="https://www.google.com.au/search?rlz=1C5CHFA_enAU763AU763&ei=dk3SXJjpC4ao_QbswquQAQ&q=this+is+neat+cleaning+sydney&oq=this+is+neat+cleaning+sydney&gs_l=psy-ab.3..33i21.13806.14467..14553...0.0..0.218.892.0j4j1......0....1..gws-wiz.......0i71j0i22i30j33i22i29i30.ySpCyBxpw1Q#lrd=0x6b12b9f8d4ae6a43:0x4d6a4d6ebad0981f,1,,," class="text-primary text-decoration-none">4.7 star rating</a> on Google.</p>
+            </div>
+            <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="review-card text-center">
+                            <div class="review-avatar">
+                                <img src="customer-male-1.svg" alt="Reviewer" class="img-fluid">
+                            </div>
+                            <h5>Akaash P.</h5>
+                            <p class="text-muted small">MARRICKVILLE - 5 MONTHS AGO</p>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">I used This is Neat for x2 cleans (Moving into my own purchased apartment & an End of Lease clean)... Received my bond in full. Would recommend them to my peers.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="review-card text-center">
+                            <div class="review-avatar">
+                                <img src="customer-male-2.svg" alt="Reviewer" class="img-fluid">
+                            </div>
+                            <h5>Jos</h5>
+                            <p class="text-muted small">KILLARA - 8 MONTHS AGO</p>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="review-text">The team did an amazing job with our end of lease clean. Very thorough and professional. Would highly recommend!</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <img src="logo.png.png" alt="Neat Logo" class="footer-logo">
+                    <p>This is Neat is a bond cleaning service keeping tenants, real estate agents and property managers happy in suburbs all across Sydney and Melbourne.</p>
+                    <div class="social-icons">
+                        <a href="https://www.youtube.com/@ThisisNeatCleaning"><i class="fab fa-youtube"></i></a>
+                        <a href="https://goo.gl/maps/mpUUD6UxUj5sFG8h9"><i class="fab fa-google"></i></a>
+                        <a href="https://www.facebook.com/thisisneatcleaning"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/thisisneatclean"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/thisisneatcleaning"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>SERVICES</h5>
+                    <ul>
+                        <li><a href="https://thisisneat.com.au/end-of-lease-cleaning/sydney">End of Lease Cleaning</a></li>
+                        <li><a href="https://thisisneat.com.au/vacate-cleaning/sydney">Vacate Cleaning</a></li>
+                        <li><a href="https://thisisneat.com.au/move-in-move-out-cleaning/sydney">Moving Cleaning</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>LOCATIONS</h5>
+                    <ul>
+                        <li><a href="https://thisisneat.com.au/end-of-lease-cleaning/sydney">Sydney</a></li>
+                        <li><a href="https://thisisneat.com.au/end-of-lease-cleaning/melbourne">Melbourne</a></li>
+                        <li><a href="https://thisisneat.com.au/end-of-lease-cleaning/sydney/inner-west">Inner West</a></li>
+                        <li><a href="https://thisisneat.com.au/end-of-lease-cleaning/sydney/eastern-suburbs">Eastern Suburbs</a></li>
+                        <li><a href="https://thisisneat.com.au/end-of-lease-cleaning/sydney/northern-beaches">Northern Beaches</a></li>
+                        <li><a href="https://thisisneat.com.au/end-of-lease-cleaning/sydney/north-shore">North Shore</a></li>
+                        <li><a href="https://thisisneat.com.au/end-of-lease-cleaning/sydney/surry-hills">Surry Hills</a></li>
+                        <li><a href="https://thisisneat.com.au/end-of-lease-cleaning/sydney/eastern-suburbs/bondi">Bondi</a></li>
+                        <li><a href="https://thisisneat.com.au/end-of-lease-cleaning/sydney/parramatta">Parramatta</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>CONTACT</h5>
+                    <p class="mb-1">This is Neat Cleaning</p>
+                    <p class="mb-1">Redfern, NSW 2016</p>
+                    <p class="mb-1">Australia</p>
+                    <p class="mb-3">0488 845 135</p>
+                    <p class="mb-1">hello@thisisneat.com.au</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="container">
+            <h5>* Our Bond Back Guarantee:</h5>
+            <ol class="mt-4">
+                <li class="mb-3">You are required to confirm with your real estate agent which specific cleaning services are required under your lease agreement. You must ensure that you tick the appropriate checkboxes on our cleaning checklist when booking a Clean.</li>
+                <li class="mb-3">If, within 72 hours after your Clean, we are notified by you or your real estate agent that a part of our Services (as described in your Booking and in our cleaning checklist) has not been completed satisfactorily to allow your tenancy bond to be released back to you, we will come back to your Residence to re-perform those Services for no additional fee (Bond Back Guarantee). Any such notification should include photographs evidencing the areas that need to be addressed and we will make an assessment of whether the area is cleanable.</li>
+                <li>Our Bond Back Guarantee does not cover the following:
+                    <ol type="a" class="mt-2">
+                        <li>cleaning services not described in your Booking or cleaning checklist available on the Site;</li>
+                        <li>permanent damage at your Residence, including smoke stains, carpet stains, hard water stains, wall marks, mould, rusting, grease stains, and permanent odours; and</li>
+                        <li>areas which, in our professional opinion, cannot be cleaned.</li>
+                    </ol>
+                </li>
+            </ol>
+            
+            <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap">
+                <div class="d-flex align-items-center">
+                    <p class="m-0">&copy;2025 THIS IS NEAT CLEANING PTY LTD</p>
+                </div>
+                <div class="d-flex">
+                    <a href="https://thisisneat.com.au/request-a-reclean" class="me-3">Request a Reclean</a>
+                    <a href="https://thisisneat.com.au/terms-and-conditions" class="me-3">Terms and Conditions</a>
+                    <a href="https://thisisneat.com.au/privacy-policy">Privacy Policy</a>
+                </div>
+                <div>
+                    <p class="m-0">ABN: 92 616 673 440</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
